@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jingna.checklistapp.page.LoginActivity">
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/fanhui"
+        android:layout_marginTop="20dp"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="50dp"
+            android:textColor="#333333"
+            android:textSize="31sp"
+            android:text="密码登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="25dp"
+            android:textColor="#969696"
+            android:textSize="17sp"
+            android:text="欢迎开启之旅"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:inputType="number"
+            android:textColor="#C4C4C4"
+            android:textSize="18sp"
+            android:hint="请输入手机号"
+            android:layout_marginTop="50dp"
+            android:background="@null"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="15dp"
+            android:background="#D1D1D1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <EditText
+                android:id="@+id/edget_pwd"
+                android:inputType="textPassword"
+                android:layout_gravity="center_vertical"
+                android:hint="请输入密码"
+                android:textSize="18sp"
+                android:textColor="#C4C4C4"
+                android:background="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_get_img"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/yanjing"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#D1D1D1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:background="@drawable/shape"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:text="登录"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="49dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/theme</item>
+        <item name="colorPrimaryDark">@color/theme</item>
+        <item name="colorAccent">@color/theme</item>
+    </style>
+    <!--顶部返回按钮白色-->
+    <style name="iv_top_back_white">
+        <item name="android:src">@mipmap/fanhui</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_width">9dp</item>
+        <item name="android:layout_height">16dp</item>
+    </style>
+    <!--顶部bar样式白色
+    <RelativeLayout-->
+    <style name="rl_top_bar_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+    <!--顶部标题样式白色-->
+    <style name="tv_top_title_white">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#232325</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!--顶部标题样式白色-->
+    <style name="tv_top_title_bill">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    <!--顶部返回按钮白色-->
+    <style name="iv_top_bill_img">
+        <item name="android:src">@mipmap/hamburger_icon</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_width">15dp</item>
+        <item name="android:layout_height">15dp</item>
+    </style>
+    <!--顶部返回按钮白色-->
+    <style name="iv_top_bill_right_img">
+        <item name="android:src">@mipmap/ziyuan</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+    <style name="MyDialog" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--标题  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <!-- 点外边可以消失  -->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>
