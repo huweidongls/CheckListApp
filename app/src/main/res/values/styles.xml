@@ -66,4 +66,19 @@
         <!-- 点外边可以消失  -->
         <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
+    <!-- popup window 显示消失动画-->
+   <!-- <style name="PopWindowAnimStyle">
+        <item name="android:windowShowAnimation">@anim/dialog_enter</item>
+        &lt;!&ndash; 指定显示的动画xml  &ndash;&gt;
+        <item name="android:windowHideAnimation">@anim/dialog_exit</item>
+        &lt;!&ndash; 指定消失的动画xml  &ndash;&gt;
+    </style>-->
+
+    <style name="PopWindowAnimStyle">
+
+        <item name="android:windowShowAnimation">@anim/dialog_enter</item>
+        <!-- 指定显示的动画xml  -->
+        <item name="android:windowHideAnimation">@anim/dialog_exit</item>
+        <!-- 指定消失的动画xml  -->
+    </style>
 </resources>

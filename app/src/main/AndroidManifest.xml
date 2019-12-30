@@ -4,22 +4,30 @@
 
     <application
         android:allowBackup="true"
+        android:name=".app.MyApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".page.MainActivity" />
-        <activity android:name=".page.LoginActivity" />
-        <activity android:name=".page.ChangePasswordActivity" />
-        <activity android:name=".page.SetPasswordActivity" />
-        <activity android:name=".page.BillActivity"></activity>
-        <activity android:name=".page.BillListActivity">
+        <activity android:name=".page.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".page.ChangePasswordActivity" />
+        <activity android:name=".page.SetPasswordActivity" />
+        <activity android:name=".page.BillActivity"
+            android:windowSoftInputMode="stateHidden"
+            ></activity>
+        <activity android:name=".page.BillListActivity"
+            android:windowSoftInputMode="stateHidden"
+            >
+
         </activity>
         <activity android:name=".page.WriteoffInfoActivity"></activity>
     </application>
