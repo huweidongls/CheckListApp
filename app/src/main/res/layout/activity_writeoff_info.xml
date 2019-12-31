@@ -8,6 +8,7 @@
     android:background="#FFFFFF"
     tools:context="com.jingna.checklistapp.page.WriteoffInfoActivity">
 <TextView
+    android:id="@+id/tv_cancel"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="暂不核销"
@@ -26,28 +27,31 @@
         android:layout_gravity="center"
         />
     <TextView
+        android:id="@+id/tv_order"
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="电子码 209757346578986754"
+        android:text="电子码 "
         android:textColor="#9F252F"
         android:textSize="13sp"
         android:layout_gravity="center"
         />
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="成人高端-升级肠癌筛查"
+        android:text=""
         android:textColor="#677685"
         android:textSize="18sp"
         android:layout_gravity="center"
         />
     <TextView
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="¥1234.00"
+        android:text=""
         android:textColor="#677685"
         android:textSize="18sp"
         android:layout_gravity="center"
@@ -67,10 +71,11 @@
             android:textSize="14sp"
             />
         <TextView
+            android:id="@+id/tv_lxr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="李四"
+            android:text=""
             android:textColor="#646464"
             android:textSize="14sp"
             />
@@ -90,10 +95,11 @@
             android:textSize="14sp"
             />
         <TextView
+            android:id="@+id/tv_tel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="15244615473"
+            android:text=""
             android:textColor="#646464"
             android:textSize="14sp"
             />
@@ -113,10 +119,11 @@
             android:textSize="14sp"
             />
         <TextView
+            android:id="@+id/tv_sfcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="232351******25261616"
+            android:text=""
             android:textColor="#646464"
             android:textSize="14sp"
             />

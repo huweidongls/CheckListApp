@@ -10,4 +10,8 @@ public class NetUrl {
     public static final String AppCooperativeMerchantloginAppPassword = "/AppCooperativeMerchant/loginAppPassword";
     public static final String AppCooperativeMerchantsendMessage = "/AppCooperativeMerchant/sendMessage";
     public static final String AppCooperativeMerchantretrievePassword= "/AppCooperativeMerchant/retrievePassword";
+    public static final String AppVerificationSheetRecordgetOneByNum = "/AppVerificationSheetRecord/getOneByNum";
+    public static final String AppVerificationSheetRecordgetOne = "AppVerificationSheetRecord/getOne";
+    public static final String AppVerificationSheetRecordupdateStatus = "AppVerificationSheetRecord/updateStatus";
+    public static final String AppVerificationSheetCheckqueryListById = "/AppVerificationSheetCheck/queryListById";
 }

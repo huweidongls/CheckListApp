@@ -13,6 +13,7 @@
         android:layout_marginTop="15dp"
         >
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="成人高端-订单结算"
@@ -21,6 +22,7 @@
             android:layout_weight="1"
             />
         <TextView
+            android:id="@+id/tv_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="＋50.00"
@@ -37,6 +39,7 @@
         android:layout_marginTop="10dp"
         >
         <TextView
+            android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12月5日 08:26"
@@ -45,6 +48,7 @@
             android:layout_weight="1"
             />
         <TextView
+            android:id="@+id/tv_user_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="余额170.00"

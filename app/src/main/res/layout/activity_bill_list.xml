@@ -31,9 +31,11 @@
         </RelativeLayout>
     </RelativeLayout>
     <EditText
+        android:id="@+id/et_codes"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="34dp"
+        android:paddingLeft="10dp"
         android:layout_marginRight="35dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/edit_bg"
@@ -56,14 +58,115 @@
         android:background="#D7DCE0"
         android:layout_marginTop="15dp"
         />
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_list"
+        android:visibility="gone"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
         >
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="10sp"
+            android:layout_height="10sp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/textview_bor"
+            />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="成人高端-升级肠癌筛查"
+            android:textColor="#3C4F5E"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="2019-12-26"
+            android:textColor="#677685"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="15dp"
+        >
+        <TextView
+            android:id="@+id/tv_ordersn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单号:209757346578986754"
+            android:textColor="#9F252F"
+            android:layout_gravity="center_vertical"
+            android:textSize="14dp"
+            android:layout_weight="1"
+
+            />
+        <TextView
+            android:id="@+id/tv_list_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="未核销"
+            android:textSize="13dp"
+            android:textColor="#677685"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="通票×5张"
+        android:textColor="#677685"
+        android:textSize="12sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="8dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E7E9"
+        android:layout_marginTop="15dp"
+        />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rr_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="166dp"
+            android:layout_height="109dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/empty3x" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_img"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="18dp"
+            android:text="暂无相关数据!"
+            android:textColor="#000000"
+            android:textSize="17sp" />
     </RelativeLayout>
 </LinearLayout>
