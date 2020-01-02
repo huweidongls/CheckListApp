@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/bg_ffffff_15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:gravity="center"
+                android:textColor="@color/black_333333"
+                android:textSize="12sp"
+                android:text="您可对工商银行尾号1234的储蓄卡进行操作"
+                android:layout_width="match_parent"
+                android:layout_height="57dp" />
+
+            <View
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/tv_del"
+                android:gravity="center"
+                android:textColor="#FF0004"
+                android:textSize="18sp"
+                android:text="删除"
+                android:layout_width="match_parent"
+                android:layout_height="57dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ffffff_15dp"
+            android:gravity="center"
+            android:textColor="#007AFF"
+            android:textSize="18sp"
+            android:text="取消"
+            android:layout_width="match_parent"
+            android:layout_height="58dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

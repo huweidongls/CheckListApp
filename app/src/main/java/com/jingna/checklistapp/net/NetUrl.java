@@ -14,4 +14,8 @@ public class NetUrl {
     public static final String AppVerificationSheetRecordgetOne = "AppVerificationSheetRecord/getOne";
     public static final String AppVerificationSheetRecordupdateStatus = "AppVerificationSheetRecord/updateStatus";
     public static final String AppVerificationSheetCheckqueryListById = "/AppVerificationSheetCheck/queryListById";
+    public static final String AppCooperativeMerchantCardtoUpdate = "AppCooperativeMerchantCard/toUpdate";
+    public static final String AppCooperativeMerchantCardqueryList = "AppCooperativeMerchantCard/queryList";
+    public static final String AppCooperativeMerchantCardtoDelete = "AppCooperativeMerchantCard/toDelete";
+    public static final String AppCooperativeMerchantgetBalanceById = "AppCooperativeMerchant/getBalanceById";
 }

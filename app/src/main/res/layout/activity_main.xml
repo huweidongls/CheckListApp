@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="50dp"
             android:text="核销记录"
             android:textColor="@color/color_ffff"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="50dp"
             android:text="核销账单"
             android:textColor="@color/color_ffff"
@@ -44,9 +44,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="50dp"
             android:text="修改密码"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:text="银行卡管理"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_jifen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:text="积分管理"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_zfb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:text="支付宝绑定"
             android:textColor="@color/color_ffff"
             android:textSize="20sp" />
         <TextView
@@ -54,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="50dp"
             android:text="退出登录"
             android:textColor="@color/color_ffff"
@@ -63,7 +93,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="70dp"
         >
         <TextView
             android:id="@+id/textview_login"

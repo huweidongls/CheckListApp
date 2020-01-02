@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="theme">#EFEFEF</color>
     <color name="color_ffff">#FFFFFF</color>
+    <color name="line">#EBEBEB</color>
+    <color name="black_333333">#333333</color>
+    <color name="white_ffffff">#ffffff</color>
 </resources>
