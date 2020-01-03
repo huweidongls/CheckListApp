@@ -93,6 +93,7 @@ public class BillListActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.iv_code:
+                //startActivityForResult(new Intent(context, CaptureActivity.class), REQUEST_CODE);
                 Intent intent = new Intent();
                 intent.setClass(context, CaptureActivity.class);
                 startActivityForResult(intent, REQUEST_CODE);

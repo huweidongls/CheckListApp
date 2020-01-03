@@ -1,5 +1,6 @@
 package com.jingna.checklistapp.page;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import com.jingna.checklistapp.util.StatusBarUtil;
 import com.jingna.checklistapp.util.ToastUtil;
 import com.jingna.checklistapp.util.ViseUtil;
 import com.jingna.checklistapp.util.WeiboDialogUtils;
+import com.vise.xsnow.permission.OnPermissionCallback;
+import com.vise.xsnow.permission.PermissionManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +47,26 @@ public class MainActivity extends AppCompatActivity {
             //这样半透明+白=灰, 状态栏的文字能看得清
             StatusBarUtil.setStatusBarColor(MainActivity.this,0x55000000);
         }
+        PermissionManager.instance().request(this, new OnPermissionCallback() {
+                    @Override
+                    public void onRequestAllow(String permissionName) {
+//                DialogUtil.showTips(mContext, getString(R.string.permission_control),
+//                        getString(R.string.permission_allow) + "\n" + permissionName);
+                    }
+
+                    @Override
+                    public void onRequestRefuse(String permissionName) {
+//                DialogUtil.showTips(mContext, getString(R.string.permission_control),
+//                        getString(R.string.permission_refuse) + "\n" + permissionName);
+                    }
+
+                    @Override
+                    public void onRequestNoAsk(String permissionName) {
+//                DialogUtil.showTips(mContext, getString(R.string.permission_control),
+//                        getString(R.string.permission_noAsk) + "\n" + permissionName);
+                    }
+                }, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA, Manifest.permission.READ_PHONE_STATE);
         textview_user.setText(SpUtils.getUserName(context));
         initData();
     }
@@ -56,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
-    @OnClick({R.id.imageView,R.id.textView4,R.id.textView1,R.id.textView2,R.id.textView3,R.id.tv_card,R.id.tv_jifen})
+    @OnClick({R.id.imageView,R.id.textView4,R.id.textView1,R.id.textView2,R.id.textView3,R.id.tv_card,R.id.tv_jifen,R.id.tv_zfb})
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -65,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.setClass(context, LoginActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+            case R.id.tv_zfb://跳转支付宝，绑定页面
                 break;
             case R.id.textView4:
                 SpUtils.clear(context);
