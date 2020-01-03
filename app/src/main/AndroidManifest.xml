@@ -28,7 +28,8 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".page.WriteoffInfoActivity" />
         <activity android:name=".page.MybankCardActivity" />
-        <activity android:name=".page.BankCardInsertActivity"></activity>
+        <activity android:name=".page.BankCardInsertActivity" />
+        <activity android:name=".page.JifenInfoActivity"></activity>
     </application>
 
 </manifest>

@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
-    @OnClick({R.id.imageView,R.id.textView4,R.id.textView1,R.id.textView2,R.id.textView3,R.id.tv_card})
+    @OnClick({R.id.imageView,R.id.textView4,R.id.textView1,R.id.textView2,R.id.textView3,R.id.tv_card,R.id.tv_jifen})
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -86,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.tv_card:
                 intent.setClass(context,MybankCardActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tv_jifen:
+                intent.setClass(context,JifenInfoActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -5,6 +5,7 @@ import android.app.Application;
 
 import com.jingna.checklistapp.net.NetUrl;
 import com.jingna.checklistapp.util.SpUtils;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import com.vise.xsnow.http.ViseHttp;
 
 import java.util.LinkedHashMap;
@@ -32,6 +33,7 @@ public class MyApplication extends Application {
         ViseHttp.init(this);
         ViseHttp.CONFIG().baseUrl(NetUrl.BASE_URL)
                 .globalHeaders(map);
+        ZXingLibrary.initDisplayOpinion(this);
     }
 
     public synchronized static MyApplication getInstance() {

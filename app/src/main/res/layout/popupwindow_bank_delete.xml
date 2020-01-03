@@ -38,7 +38,21 @@
                 android:text="删除"
                 android:layout_width="match_parent"
                 android:layout_height="57dp" />
-
+            <View
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <TextView
+                android:id="@+id/tv_default"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_ffffff_15dp"
+                android:gravity="center"
+                android:textColor="#007AFF"
+                android:textSize="18sp"
+                android:text="设为默认"
+                android:layout_width="match_parent"
+                android:layout_height="58dp" />
         </LinearLayout>
 
         <TextView

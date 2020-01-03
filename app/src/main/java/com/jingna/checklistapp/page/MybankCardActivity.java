@@ -99,6 +99,7 @@ public class MybankCardActivity extends AppCompatActivity {
         TextView tvTitle = view.findViewById(R.id.tv_title);
         TextView tvDel = view.findViewById(R.id.tv_del);
         TextView tvCancel = view.findViewById(R.id.tv_cancel);
+        TextView tv_default = view.findViewById(R.id.tv_default);
 
         tvTitle.setText("您可对"+bankName+"尾号"+card+"的储蓄卡进行操作");
 
@@ -121,6 +122,30 @@ public class MybankCardActivity extends AppCompatActivity {
                         ToastUtil.showShort(context, "删除成功");
                         mList.remove(pos);
                         adapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
+        tv_default.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Map<String,String> map = new LinkedHashMap<>();
+                map.put("id",mList.get(pos).getId()+"");
+                map.put("userId",SpUtils.getUserId(context));
+                ViseUtil.Post(context, NetUrl.AppCooperativeMerchantCardupdateDefault, map, new ViseUtil.ViseListener() {
+                    @Override
+                    public void onReturn(String s) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(s);
+                            if(jsonObject.optString("status").equals("200")){
+                                ToastUtil.showShort(context, "设置成功!");
+                                popupWindow.dismiss();
+                            }else{
+                                ToastUtil.showShort(context, jsonObject.optString("errorMsg"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             }

@@ -2,6 +2,7 @@ package com.jingna.checklistapp.page;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +30,8 @@ import com.jingna.checklistapp.util.StatusBarUtil;
 import com.jingna.checklistapp.util.ToastUtil;
 import com.jingna.checklistapp.util.ViseUtil;
 import com.jingna.checklistapp.util.WeiboDialogUtils;
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,6 +50,7 @@ public class BillListActivity extends AppCompatActivity {
     private List<BillListBean.DataBean> mList;
     private BillListAdapter adapter;
     private int bill_radio = 2;
+    private int REQUEST_CODE = 100;
     private int bill_id = 0;
     @BindView(R.id.serche_order)
     Button serche_order;
@@ -82,11 +86,16 @@ public class BillListActivity extends AppCompatActivity {
         ButterKnife.bind(BillListActivity.this);
         initData();
     }
-    @OnClick({R.id.rl_back,R.id.serche_order,R.id.ll_list})
+    @OnClick({R.id.rl_back,R.id.serche_order,R.id.ll_list,R.id.iv_code})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_back:
                 finish();
+                break;
+            case R.id.iv_code:
+                Intent intent = new Intent();
+                intent.setClass(context, CaptureActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
                 break;
             case R.id.ll_list:
                 if(bill_radio == 1){
@@ -231,6 +240,28 @@ public class BillListActivity extends AppCompatActivity {
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);*/
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        /**
+         * 处理二维码扫描结果
+         */
+        if (requestCode == REQUEST_CODE) {
+            //处理扫描结果（在界面上显示）
+            if (null != data) {
+                Bundle bundle = data.getExtras();
+                if (bundle == null) {
+                    return;
+                }
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+                    et_codes.setText(result);
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    ToastUtil.showShort(context, "解析二维码失败");
+                }
+            }
+        }
     }
     public class ButtomDialogView extends Dialog {
         private boolean iscancelable;//控制点击dialog外部是否dismiss

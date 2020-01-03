@@ -27,7 +27,8 @@
             android:layout_alignParentRight="true"
             android:layout_height="match_parent">
            <ImageView
-                style="@style/iv_top_bill_right_img" />-->
+               android:id="@+id/iv_code"
+                style="@style/iv_top_bill_right_img" />
         </RelativeLayout>
     </RelativeLayout>
     <EditText
