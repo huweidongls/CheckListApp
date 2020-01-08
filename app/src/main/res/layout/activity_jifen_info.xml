@@ -69,6 +69,7 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/btn_tixian"
         android:textColor="@color/white_ffffff"
         android:textSize="18sp"
         android:text="提现"

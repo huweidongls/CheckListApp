@@ -5,8 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jingna.checklistapp.R;
 import com.jingna.checklistapp.bean.BillBean;
 import com.jingna.checklistapp.bean.BnakListBean;
@@ -35,6 +38,13 @@ public class BankCardListAdapter extends RecyclerView.Adapter<BankCardListAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
+        if(data.get(position).getCardName().equals("支付宝")){
+            holder.rlBank.setBackgroundResource(R.drawable.bg_00a0e9_6dp);
+            Glide.with(context).load(R.mipmap.zhifubao).into(holder.ivType);
+        }else{
+            holder.rlBank.setBackgroundResource(R.drawable.bg_ca566b_6dp);
+            Glide.with(context).load(R.mipmap.yinhangka).into(holder.ivType);
+        }
         holder.tv_bank_name.setText(data.get(position).getCardName());
         String phone = data.get(position).getCardPhone();
         phone = phone.substring(phone.length()-4, phone.length());
@@ -57,6 +67,8 @@ public class BankCardListAdapter extends RecyclerView.Adapter<BankCardListAdapte
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
+        private RelativeLayout rlBank;
+        private ImageView ivType;
         private TextView tv_bank_name;
         private TextView tv_phonenum;
         private TextView tv_bank_card;
@@ -65,6 +77,8 @@ public class BankCardListAdapter extends RecyclerView.Adapter<BankCardListAdapte
             tv_bank_name = itemView.findViewById(R.id.tv_bank_name);
             tv_phonenum = itemView.findViewById(R.id.tv_phonenum);
             tv_bank_card = itemView.findViewById(R.id.tv_bank_card);
+            rlBank = itemView.findViewById(R.id.rl_bank);
+            ivType = itemView.findViewById(R.id.iv_type);
         }
     }
     public interface ClickListener{

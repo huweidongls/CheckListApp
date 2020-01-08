@@ -1,12 +1,13 @@
 package com.jingna.checklistapp.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Administrator on 2020/1/2.
  */
 
-public class BnakListBean {
+public class BnakListBean implements Serializable {
     /**
      * status : 200
      * data : [{"id":7,"cardNumber":"231649799861949166","cardName":"哈尔滨银行","cardPhone":"15244615473"}]
@@ -31,7 +32,7 @@ public class BnakListBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * id : 7
          * cardNumber : 231649799861949166

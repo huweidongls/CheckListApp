@@ -78,7 +78,7 @@ public class JifenInfoActivity extends AppCompatActivity {
         }
         return new DecimalFormat(formatStr).format(v);
     }
-    @OnClick({R.id.rl_back,R.id.rl_details})
+    @OnClick({R.id.rl_back,R.id.rl_details,R.id.btn_tixian})
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -87,6 +87,10 @@ public class JifenInfoActivity extends AppCompatActivity {
                 break;
             case R.id.rl_details:
                 intent.setClass(context,BillActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_tixian:
+                intent.setClass(context,CommissionActivity.class);
                 startActivity(intent);
                 break;
         }

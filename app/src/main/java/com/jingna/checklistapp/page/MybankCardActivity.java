@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +30,7 @@ import com.jingna.checklistapp.util.ViseUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -45,10 +47,12 @@ public class MybankCardActivity extends AppCompatActivity {
     @BindView(R.id.rv)
     RecyclerView recyclerView;
     private PopupWindow popupWindow;
+    private String type = "mysql";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mybank_card);
+        type = getIntent().getStringExtra("type");
         StatusBarUtil.setStatusBarColor(MybankCardActivity.this, getResources().getColor(R.color.color_ffff));
         //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
         //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
@@ -60,7 +64,11 @@ public class MybankCardActivity extends AppCompatActivity {
         ButterKnife.bind(MybankCardActivity.this);
         initData();
     }
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initData();
+    }
     private void initData() {
         Map<String,String> map = new LinkedHashMap<>();
         map.put("id", SpUtils.getUserId(context));
@@ -76,7 +84,14 @@ public class MybankCardActivity extends AppCompatActivity {
                         adapter = new BankCardListAdapter(mList, new BankCardListAdapter.ClickListener() {
                             @Override
                             public void onItemClick(int pos, String bankName, String card) {
-                                showDelPop(pos, bankName, card);
+                                if(type.equals("mysql")){
+                                    showDelPop(pos, bankName, card);
+                                }else{
+                                    Intent intent = new Intent();
+                                    intent.putExtra("bean", (Serializable) mList.get(pos));
+                                    setResult(1000, intent);
+                                    finish();
+                                }
                             }
                         });
                         LinearLayoutManager manager = new LinearLayoutManager(context);

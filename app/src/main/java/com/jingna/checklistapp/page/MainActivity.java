@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.tv_zfb://跳转支付宝，绑定页面
+                intent.setClass(context,AlipayBindActivity.class);
+                startActivity(intent);
                 break;
             case R.id.textView4:
                 SpUtils.clear(context);

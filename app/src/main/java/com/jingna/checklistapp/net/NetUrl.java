@@ -19,4 +19,6 @@ public class NetUrl {
     public static final String AppCooperativeMerchantCardtoDelete = "AppCooperativeMerchantCard/toDelete";
     public static final String AppCooperativeMerchantgetBalanceById = "AppCooperativeMerchant/getBalanceById";
     public static final String AppCooperativeMerchantCardupdateDefault= "AppCooperativeMerchantCard/updateDefault";
+    public static final String AppVerificationSheetCheckwithdrawal = "/AppVerificationSheetCheck/withdrawal";
+    public static final String AppVerificationSheetCheckwithdrawalApply = "/AppVerificationSheetCheck/withdrawalApply";
 }

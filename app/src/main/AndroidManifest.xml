@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jingna.checklistapp">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -25,6 +26,7 @@
     <uses-feature android:name="android.hardware.camera" />
     <!-- 调用前置摄像头功能 -->
     <uses-feature android:name="android.hardware.camera.front" />
+
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
@@ -52,7 +54,9 @@
         <activity android:name=".page.WriteoffInfoActivity" />
         <activity android:name=".page.MybankCardActivity" />
         <activity android:name=".page.BankCardInsertActivity" />
-        <activity android:name=".page.JifenInfoActivity"></activity>
+        <activity android:name=".page.JifenInfoActivity" />
+        <activity android:name=".page.AlipayBindActivity" />
+        <activity android:name=".page.CommissionActivity"></activity>
     </application>
 
 </manifest>

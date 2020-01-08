@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jingna.checklistapp.page.CommissionActivity">
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        style="@style/rl_top_bar_gray">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView style="@style/iv_top_back_gray" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/tv_top_title_gray"
+            android:text="提佣金" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:background="#FFFFFF">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp">
+
+            <LinearLayout
+                android:id="@+id/ll_bank"
+                android:background="#FBFBFB"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <TextView
+                    android:layout_marginTop="19dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="到账银行卡"
+                    android:textColor="#232325"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginLeft="40dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_bank_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="农业银行 (1234）"
+                        android:textColor="#232325"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2小时内到账"
+                        android:textColor="#232325"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginRight="28dp"
+                    android:layout_marginTop="24dp"
+                    android:scaleType="fitEnd"
+                    android:src="@mipmap/path" />
+
+            </LinearLayout>
+
+            <TextView
+                android:background="#FBFBFB"
+                android:gravity="center"
+                android:textColor="#232325"
+                android:textSize="14sp"
+                android:text="请选择银行卡"
+                android:id="@+id/tv_select"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="提现金额"
+            android:textColor="#232325"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥"
+                android:textColor="#232325"
+                android:textSize="36sp" />
+
+            <EditText
+                android:layout_marginLeft="10dp"
+                android:inputType="number"
+                android:id="@+id/money"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:textSize="45sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:background="#979797" />
+
+        <LinearLayout
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="佣金余额¥0.0，"
+                android:textColor="#232325"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部提现"
+                android:textColor="#5876B5"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/btn_mone"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#CF9297"
+            android:text="提现"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>
