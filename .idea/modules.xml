@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CheckListApp.iml" filepath="$PROJECT_DIR$/CheckListApp.iml" />
+      <module fileurl="file://E:\gitproject\CheckListApp\CheckListApp.iml" filepath="E:\gitproject\CheckListApp\CheckListApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\gitproject\CheckListApp\app\app.iml" filepath="E:\gitproject\CheckListApp\app\app.iml" />
     </modules>
   </component>
 </project>
