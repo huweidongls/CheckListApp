@@ -53,7 +53,7 @@ public class MybankCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mybank_card);
         type = getIntent().getStringExtra("type");
-        StatusBarUtil.setStatusBarColor(MybankCardActivity.this, getResources().getColor(R.color.color_ffff));
+        StatusBarUtil.setStatusBarColor(MybankCardActivity.this, getResources().getColor(R.color.white_role));
         //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
         //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
         if (!StatusBarUtil.setStatusBarDarkTheme(MybankCardActivity.this, true)) {

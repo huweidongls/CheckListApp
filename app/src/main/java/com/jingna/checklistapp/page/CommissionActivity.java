@@ -81,7 +81,6 @@ public class CommissionActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 BankTiXianBean bean = gson.fromJson(s, BankTiXianBean.class);
                 allMoney = bean.getData().getBalance();
-                ToastUtil.showShort(CommissionActivity.this, allMoney+"");
                 tvMoney.setText("余额¥" + StringUtils.roundByScale(allMoney, 2) + "，");
                 bankId = bean.getData().getCardid()+"";
                 tvBankName.setText(bean.getData().getCardname());
@@ -155,7 +154,7 @@ public class CommissionActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.all:
-                money.setText(allMoney+"");
+                money.setText((int) allMoney+"");
                 money.setSelection(money.getText().toString().length());
                 break;
             case R.id.ll_bank:
