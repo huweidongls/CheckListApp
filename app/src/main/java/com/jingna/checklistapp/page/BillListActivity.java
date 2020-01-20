@@ -157,7 +157,6 @@ public class BillListActivity extends AppCompatActivity {
         final TextView tv_order = contentview.findViewById(R.id.tv_order);
         final TextView tv_title = contentview.findViewById(R.id.tv_title);
         final TextView tv_price = contentview.findViewById(R.id.tv_price);
-        final TextView tv_sfcode = contentview.findViewById(R.id.tv_sfcode);
         final TextView tv_tel = contentview.findViewById(R.id.tv_tel);
         final TextView tv_lxr = contentview.findViewById(R.id.tv_lxr);
         final TextView tv_cancel = contentview.findViewById(R.id.tv_cancel);
@@ -175,7 +174,6 @@ public class BillListActivity extends AppCompatActivity {
                         tv_order.setText("电子码 "+billContentBean.getData().getRecordNum());
                         tv_title.setText(billContentBean.getData().getRecordName());
                         tv_price.setText("￥"+billContentBean.getData().getRecordPrice()+"元");
-                        tv_sfcode.setText(billContentBean.getData().getLinkIdcard());
                         tv_tel.setText(billContentBean.getData().getLinkPhone());
                         tv_lxr.setText(billContentBean.getData().getLinkman());
                     }else{

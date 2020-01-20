@@ -51,7 +51,6 @@ public class BillContentBean {
         private int recordPrice;
         private String linkman;
         private String linkPhone;
-        private String linkIdcard;
         private String updateTime;
 
         public int getId() {
@@ -116,14 +115,6 @@ public class BillContentBean {
 
         public void setLinkPhone(String linkPhone) {
             this.linkPhone = linkPhone;
-        }
-
-        public String getLinkIdcard() {
-            return linkIdcard;
-        }
-
-        public void setLinkIdcard(String linkIdcard) {
-            this.linkIdcard = linkIdcard;
         }
 
         public String getUpdateTime() {
