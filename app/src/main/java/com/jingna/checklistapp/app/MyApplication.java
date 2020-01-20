@@ -17,6 +17,8 @@ import java.util.Map;
  * Created by Administrator on 2019/12/10.
  */
 
+//147258369  qlc  123456
+
 public class MyApplication extends Application {
 
     private static MyApplication instance;
