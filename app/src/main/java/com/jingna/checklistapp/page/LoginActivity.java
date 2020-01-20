@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -121,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if(jsonObject.optString("status").equals("200")){
                                     Gson gson = new Gson();
                                     Loginbean loginbean = gson.fromJson(s, Loginbean.class);
+                                    //Log.e("tokens8888",loginbean.getData().getToken());
                                     SpUtils.setToken(context, loginbean.getData().getToken());
                                     SpUtils.setUserId(context, loginbean.getData().getUserId() + "");
                                     SpUtils.setUserName(context,loginbean.getData().getCompanyName());

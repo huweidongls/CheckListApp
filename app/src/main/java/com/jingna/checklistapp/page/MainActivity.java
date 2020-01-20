@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.tv_card:
                 intent.setClass(context,MybankCardActivity.class);
+                intent.putExtra("type","mysql");
                 startActivity(intent);
                 break;
             case R.id.tv_jifen:

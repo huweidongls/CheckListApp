@@ -26,7 +26,7 @@
             android:layout_below="@+id/imageView"
             android:layout_marginTop="60dp"
             android:layout_marginLeft="50dp"
-            android:text="核销记录"
+            android:text="核销电子卡"
             android:textColor="@color/color_ffff"
             android:textSize="20sp" />
         <TextView
@@ -66,7 +66,7 @@
             android:layout_below="@+id/imageView"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="50dp"
-            android:text="积分管理"
+            android:text="我的账户"
             android:textColor="@color/color_ffff"
             android:textSize="20sp" />
         <TextView

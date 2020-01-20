@@ -47,7 +47,7 @@ public class MybankCardActivity extends AppCompatActivity {
     @BindView(R.id.rv)
     RecyclerView recyclerView;
     private PopupWindow popupWindow;
-    private String type = "mysql";
+    private String type = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

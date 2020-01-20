@@ -3,6 +3,7 @@ package com.jingna.checklistapp.util;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.jingna.checklistapp.page.LoginActivity;
 import com.vise.xsnow.http.ViseHttp;
@@ -63,6 +64,7 @@ public class ViseUtil {
                             if(jsonObject.optString("status").equals("200")){
                                 listener.onReturn(data);
                             }else if(jsonObject.optString("status").equals("11")){
+                                //Log.e("7878787878",data);
                                 SpUtils.clear(context);
                                 Intent intent = new Intent();
                                 intent.setClass(context, LoginActivity.class);

@@ -41,8 +41,8 @@ public class BillBean {
 
         private String createTime;
         private String operatingDescribe;
-        private int balance;
-        private int operatingRecord;
+        private double balance;
+        private double operatingRecord;
 
         public String getCreateTime() {
             return createTime;
@@ -60,19 +60,19 @@ public class BillBean {
             this.operatingDescribe = operatingDescribe;
         }
 
-        public int getBalance() {
+        public double getBalance() {
             return balance;
         }
 
-        public void setBalance(int balance) {
+        public void setBalance(double balance) {
             this.balance = balance;
         }
 
-        public int getOperatingRecord() {
+        public double getOperatingRecord() {
             return operatingRecord;
         }
 
-        public void setOperatingRecord(int operatingRecord) {
+        public void setOperatingRecord(double operatingRecord) {
             this.operatingRecord = operatingRecord;
         }
     }

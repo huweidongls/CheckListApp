@@ -50,6 +50,8 @@ public class BankCardInsertActivity extends AppCompatActivity {
     EditText et_phonenum;
     @BindView(R.id.btn_agree)
     Button btnAgree;
+    @BindView(R.id.et_name)
+    EditText et_name;
     @BindView(R.id.iv_agree)
     ImageView ivAgree;
     private String code="";
@@ -89,7 +91,8 @@ public class BankCardInsertActivity extends AppCompatActivity {
                 String et_bank_cards = et_bank_card.getText().toString();
                 String et_bank_names = et_bank_name.getText().toString();
                 String et_phonenums = et_phonenum.getText().toString();
-                if(et_bank_cards.isEmpty() || et_bank_names.isEmpty() || et_phonenums.isEmpty()){
+                String et_username = et_name.getText().toString();
+                if(et_bank_cards.isEmpty() || et_bank_names.isEmpty() || et_phonenums.isEmpty() || et_username.isEmpty()){
                     ToastUtil.showShort(context, "请将信息填写完整!");
                 }else if(!isPhoneNumberValid(et_phonenums)){
                     ToastUtil.showShort(context, "请输入正确的手机号!");
@@ -97,7 +100,7 @@ public class BankCardInsertActivity extends AppCompatActivity {
                     if (!iv_agree){
                         ToastUtil.showShort(context, "请勾选协议!");
                     }else{
-                        showShareTable(et_bank_cards,et_bank_names,et_phonenums);
+                        showShareTable(et_bank_cards,et_bank_names,et_phonenums,et_username);
                     }
                 }
                 break;
@@ -119,7 +122,7 @@ public class BankCardInsertActivity extends AppCompatActivity {
         }
         return isValid;
     }
-    public void showShareTable(final String cards,final String bankname,final String phone){
+    public void showShareTable(final String cards,final String bankname,final String phone,final String et_username){
         View contentview = LayoutInflater.from(this).inflate(R.layout.dialog_bank_code, null);
         final TextView tv_phone_title = contentview.findViewById(R.id.tv_phone_title);
         final TextView tv_cancel = contentview.findViewById(R.id.tv_cancel);
@@ -179,6 +182,8 @@ public class BankCardInsertActivity extends AppCompatActivity {
                         map.put("cardNumber",cards);
                         map.put("cardName",bankname);
                         map.put("cardPhone",phone);
+                        map.put("realName",et_username);
+                        map.put("cardChannel","银行卡");
                         map.put("cardMerchantId",SpUtils.getUserId(context));
                         ViseUtil.Post(context, NetUrl.AppCooperativeMerchantCardtoUpdate, map, dialog, new ViseUtil.ViseListener() {
                             @Override

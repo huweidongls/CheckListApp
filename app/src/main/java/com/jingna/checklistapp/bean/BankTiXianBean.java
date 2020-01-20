@@ -36,15 +36,15 @@ public class BankTiXianBean {
          * cardid : 8
          */
 
-        private int balance;
+        private double balance;
         private String cardname;
         private int cardid;
 
-        public int getBalance() {
+        public double getBalance() {
             return balance;
         }
 
-        public void setBalance(int balance) {
+        public void setBalance(double balance) {
             this.balance = balance;
         }
 

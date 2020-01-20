@@ -33,9 +33,9 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.tv_title.setText(data.get(position).getOperatingDescribe());
-        holder.tv_money.setText("￥"+data.get(position).getOperatingRecord());
+        holder.tv_money.setText("￥"+data.get(position).getOperatingRecord()+"元");
         holder.tv_time.setText(data.get(position).getCreateTime());
-        holder.tv_user_money.setText("余额"+data.get(position).getBalance());
+        holder.tv_user_money.setText("余额"+data.get(position).getBalance()+"元");
     }
 
 

@@ -50,7 +50,7 @@ public class BankCardListAdapter extends RecyclerView.Adapter<BankCardListAdapte
         phone = phone.substring(phone.length()-4, phone.length());
         holder.tv_phonenum.setText("手机尾号"+phone);
         String card = data.get(position).getCardNumber();
-        card = card.substring(card.length()-4, card.length());
+        //card = card.substring(card.length()-4, card.length());
         holder.tv_bank_card.setText(card);
         final String finalCard = card;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
