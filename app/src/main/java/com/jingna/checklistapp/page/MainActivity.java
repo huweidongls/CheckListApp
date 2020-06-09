@@ -2,51 +2,48 @@ package com.jingna.checklistapp.page;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 
-import com.google.gson.Gson;
 import com.jingna.checklistapp.R;
-import com.jingna.checklistapp.bean.Loginbean;
-import com.jingna.checklistapp.net.NetUrl;
-import com.jingna.checklistapp.util.SpUtils;
-import com.jingna.checklistapp.util.StatusBarUtil;
+import com.jingna.checklistapp.app.MyApplication;
+import com.jingna.checklistapp.base.BaseActivity;
+import com.jingna.checklistapp.fragment.Fragment1;
+import com.jingna.checklistapp.fragment.Fragment2;
+import com.jingna.checklistapp.fragment.Fragment3;
+import com.jingna.checklistapp.util.StatusBarUtils;
 import com.jingna.checklistapp.util.ToastUtil;
-import com.jingna.checklistapp.util.ViseUtil;
-import com.jingna.checklistapp.util.WeiboDialogUtils;
 import com.vise.xsnow.permission.OnPermissionCallback;
 import com.vise.xsnow.permission.PermissionManager;
+import com.yinglan.alphatabs.AlphaTabsIndicator;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
     private Context context = MainActivity.this;
-    @BindView(R.id.textview_user)
-    TextView textview_user;
+
+    @BindView(R.id.mViewPager)
+    ViewPager mViewPger;
+    @BindView(R.id.alphaIndicator)
+    AlphaTabsIndicator alphaTabsIndicator;
+
+    private long exitTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MyApplication.getInstance().addActivity(MainActivity.this);
         ButterKnife.bind(MainActivity.this);
-        StatusBarUtil.setStatusBarColor(MainActivity.this, getResources().getColor(R.color.color_ffff));
-        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
-        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
-        if (!StatusBarUtil.setStatusBarDarkTheme(MainActivity.this, true)) {
-            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
-            //这样半透明+白=灰, 状态栏的文字能看得清
-            StatusBarUtil.setStatusBarColor(MainActivity.this,0x55000000);
-        }
         PermissionManager.instance().request(this, new OnPermissionCallback() {
                     @Override
                     public void onRequestAllow(String permissionName) {
@@ -67,59 +64,86 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }, Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.CAMERA, Manifest.permission.READ_PHONE_STATE);
-        textview_user.setText(SpUtils.getUserName(context));
-        initData();
+        init();
+
     }
 
-    private void initData() {
-        if(SpUtils.getUserId(context).equals("0")){
-            Intent intent = new Intent();
-            intent.setClass(context, LoginActivity.class);
-            startActivity(intent);
-            finish();
+    /**
+     * 初始化各个组件
+     */
+    private void init() {
+
+        MainAdapter mainAdapter = new MainAdapter(getSupportFragmentManager());
+        mViewPger.setOffscreenPageLimit(3);
+        mViewPger.setAdapter(mainAdapter);
+        mViewPger.addOnPageChangeListener(mainAdapter);
+
+        alphaTabsIndicator.setViewPager(mViewPger);
+
+    }
+
+    private class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener {
+
+        private List<Fragment> fragments = new ArrayList<>();
+        Fragment fragment1 = new Fragment1();
+        Fragment fragment2 = new Fragment2();
+        Fragment fragment3 = new Fragment3();
+
+        public MainAdapter(FragmentManager fm) {
+            super(fm);
+            fragments.add(fragment1);
+            fragments.add(fragment2);
+            fragments.add(fragment3);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.size();
+        }
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            if (0 == position) {
+                StatusBarUtils.setStatusBar(MainActivity.this, getResources().getColor(R.color.theme));
+            } else if (1 == position) {
+                StatusBarUtils.setStatusBar(MainActivity.this, getResources().getColor(R.color.theme));
+            } else if (2 == position) {
+                StatusBarUtils.setStatusBar(MainActivity.this, getResources().getColor(R.color.theme));
+            }
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
         }
     }
-    @OnClick({R.id.imageView,R.id.textView4,R.id.textView1,R.id.textView2,R.id.textView3,R.id.tv_card,R.id.tv_jifen,R.id.tv_zfb})
-    public void onClick(View view) {
-        Intent intent = new Intent();
-        switch (view.getId()) {
-            case R.id.imageView:
-                SpUtils.clear(context);
-                intent.setClass(context, LoginActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.tv_zfb://跳转支付宝，绑定页面
-                intent.setClass(context,AlipayBindActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.textView4:
-                SpUtils.clear(context);
-                intent.setClass(context, LoginActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.textView1:
-                intent.setClass(context,BillListActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.textView2:
-                intent.setClass(context,BillActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.textView3:
-                intent.setClass(context,ChangePasswordActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.tv_card:
-                intent.setClass(context,MybankCardActivity.class);
-                intent.putExtra("type","mysql");
-                startActivity(intent);
-                break;
-            case R.id.tv_jifen:
-                intent.setClass(context,JifenInfoActivity.class);
-                startActivity(intent);
-                break;
+
+    @Override
+    public void onBackPressed() {
+        backtrack();
+    }
+
+    /**
+     * 退出销毁所有activity
+     */
+    private void backtrack() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            ToastUtil.showShort(context, "再按一次退出程序");
+            exitTime = System.currentTimeMillis();
+        } else {
+            MyApplication.getInstance().exit();
+            exitTime = 0;
         }
     }
+
 }

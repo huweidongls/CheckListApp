@@ -7,38 +7,36 @@
     android:orientation="vertical"
     tools:context="com.jingna.checklistapp.page.LoginActivity">
 
-    <ImageView
-        android:id="@+id/rl_back"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/fanhui" />
+    <RelativeLayout
+        android:background="@mipmap/login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="50dp"
+            android:layout_height="44dp">
+
+            <ImageView style="@style/iv_top_back" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="14dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white_ffffff"
+            android:textSize="17sp"
+            android:text="登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="50dp"
-            android:text="密码登录"
-            android:textColor="#333333"
-            android:textSize="31sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="9dp"
-            android:text="欢迎开启之旅"
-            android:textColor="#969696"
-            android:textSize="17sp" />
 
         <EditText
             android:id="@+id/et_phone"
@@ -80,12 +78,6 @@
                 android:textColor="#333333"
                 android:textSize="18sp" />
 
-            <ImageView
-                android:id="@+id/iv_get_img"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginTop="15dp"
-                android:src="@mipmap/yanjing" />
         </LinearLayout>
 
         <View
@@ -98,11 +90,11 @@
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/shape"
+            android:background="@drawable/bg_23c1c7_3dp"
             android:text="登录"
             android:textColor="#FFFFFF"
             android:textSize="17sp" />

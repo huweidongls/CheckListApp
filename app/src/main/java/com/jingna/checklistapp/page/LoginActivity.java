@@ -40,8 +40,6 @@ public class LoginActivity extends AppCompatActivity {
     private int PwdRadio = 0;
     @BindView(R.id.edget_pwd)
     EditText edget_pwd;
-    @BindView(R.id.iv_get_img)
-    ImageView iv_get_img;
     @BindView(R.id.et_phone)
     EditText et_phone;
     @BindView(R.id.btn_login)
@@ -52,14 +50,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        StatusBarUtil.setStatusBarColor(LoginActivity.this, getResources().getColor(R.color.color_ffff));
-        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
-        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
-        if (!StatusBarUtil.setStatusBarDarkTheme(LoginActivity.this, true)) {
-            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
-            //这样半透明+白=灰, 状态栏的文字能看得清
-            StatusBarUtil.setStatusBarColor(LoginActivity.this, 0x55000000);
-        }
+
         ButterKnife.bind(LoginActivity.this);
         if (!SpUtils.getUserId(context).equals("0")) {
             Intent intent = new Intent();
@@ -67,29 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        initPwd();
-        initView();
-    }
 
-    /**
-     * 切换密码明文密文
-     */
-    private void initPwd() {
-        iv_get_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (PwdRadio == 0) {
-                    edget_pwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    Glide.with(context).load(R.mipmap.normal).into(iv_get_img);
-                    PwdRadio = 1;
-                } else {
-                    edget_pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    Glide.with(context).load(R.mipmap.yanjing).into(iv_get_img);
-                    PwdRadio = 0;
-                }
-                edget_pwd.setSelection(edget_pwd.length());
-            }
-        });
     }
 
     @OnClick({R.id.rl_back, R.id.btn_login})
@@ -103,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 String phone = et_phone.getText().toString();
                 String pwd = edget_pwd.getText().toString();
                 if (StringUtils.isEmpty(phone) || StringUtils.isEmpty(pwd)) {
-                    ToastUtil.showShort(context, "请输入手机号/密码登录!");
+                    ToastUtil.showShort(context, "请输入手机号或密码");
                 } else {
                     dialog = WeiboDialogUtils.createLoadingDialog(context, "请等待...");
                     Map<String, String> map = new LinkedHashMap<>();
@@ -134,26 +103,4 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void initView() {
-        et_phone.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.length() > 0) {
-                    btn_login.setBackgroundResource(R.drawable.loginbg);
-                } else if (s.length() <= 0) {
-                    btn_login.setBackgroundResource(R.drawable.shape);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-    }
 }

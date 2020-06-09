@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/back"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="60dp"
+            android:text="核销电子卡"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="核销账单"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="修改密码"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="银行卡管理"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_jifen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="我的账户"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_zfb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="支付宝绑定"
+            android:textColor="@color/color_ffff"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
+
+            <TextView
+                android:id="@+id/textview_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:text="当前登录用户"
+                android:textColor="@color/color_ffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textview_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_login"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:text="客服A"
+                android:textColor="@color/color_ffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_user"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:text="软件版本Ver.1.0"
+                android:textColor="#BDCADB"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

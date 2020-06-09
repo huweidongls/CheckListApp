@@ -66,4 +66,5 @@ dependencies {
     compile 'com.contrarywind:Android-PickerView:4.1.5'
     implementation files('libs/alipaySdk-20180601.jar')
     compile 'cn.yipianfengye.android:zxing-library:2.2'
+    compile 'com.yinglan.alphatabs:library:1.0.8'
 }

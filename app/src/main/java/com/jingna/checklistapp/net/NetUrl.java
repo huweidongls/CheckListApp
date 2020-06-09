@@ -6,8 +6,9 @@ package com.jingna.checklistapp.net;
 
 public class NetUrl {
 
-//    public static final String BASE_URL = "http://192.168.1.166:80/";//http://192.168.2.211:8080/
-    public static final String BASE_URL = "http://slsapi.5ijiaoyu.cn/";//http://192.168.2.211:8080/
+    public static final String BASE_URL = "http://192.168.1.166:8080/";//http://192.168.2.211:8080/
+//    public static final String BASE_URL = "http://122.112.187.234:80/";//http://192.168.2.211:8080/
+//    public static final String BASE_URL = "http://slsapi.5ijiaoyu.cn/";//http://192.168.2.211:8080/
     public static final String AppCooperativeMerchantloginAppPassword = "/AppCooperativeMerchant/loginAppPassword";
     public static final String AppCooperativeMerchantsendMessage = "/AppCooperativeMerchant/sendMessage";
     public static final String AppCooperativeMerchantretrievePassword= "/AppCooperativeMerchant/retrievePassword";
