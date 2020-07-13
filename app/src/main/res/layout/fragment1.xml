@@ -11,6 +11,7 @@
         android:layout_height="45dp">
 
         <LinearLayout
+            android:id="@+id/ll1"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -37,6 +38,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll2"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"

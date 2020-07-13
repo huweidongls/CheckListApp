@@ -55,7 +55,9 @@
         <activity android:name=".page.BankCardInsertActivity" />
         <activity android:name=".page.JifenInfoActivity" />
         <activity android:name=".page.AlipayBindActivity" />
-        <activity android:name=".page.CommissionActivity"></activity>
+        <activity android:name=".page.CommissionActivity" />
+        <activity android:name=".page.QdOrderDetailsActivity" />
+        <activity android:name=".page.MyOrderDetailsActivity"></activity>
     </application>
 
 </manifest>

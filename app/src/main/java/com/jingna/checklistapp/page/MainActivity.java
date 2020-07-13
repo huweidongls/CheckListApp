@@ -43,6 +43,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         MyApplication.getInstance().addActivity(MainActivity.this);
+        StatusBarUtils.setStatusBar(MainActivity.this, getResources().getColor(R.color.white_ffffff));
         ButterKnife.bind(MainActivity.this);
         PermissionManager.instance().request(this, new OnPermissionCallback() {
                     @Override

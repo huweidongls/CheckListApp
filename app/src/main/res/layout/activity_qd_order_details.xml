@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white_ffffff"
+    tools:context="com.jingna.checklistapp.page.QdOrderDetailsActivity">
+
+    <RelativeLayout
+        style="@style/rl_top_bar">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="42dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                style="@style/iv_top_back" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:text="立即抢单"
+            style="@style/tv_top_title" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@color/black_333333"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <LinearLayout
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:text="智能升级无线款 家人膝盖护理专家健康生活红光照射气囊循环"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginLeft="42dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/icon014"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp" />
+
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dp"
+                        android:textColor="#777777"
+                        android:textSize="11sp"
+                        android:text="0.3km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="我的姓名"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="121dp"
+                    android:textColor="@color/black_333333"
+                    android:textSize="12sp"
+                    android:text="张宝林"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="电话号码"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="121dp"
+                    android:textColor="@color/black_333333"
+                    android:textSize="12sp"
+                    android:text="15341556555"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="收货地址"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="121dp"
+                    android:textColor="@color/black_333333"
+                    android:textSize="12sp"
+                    android:text="哈尔滨市汉文街金华大厦124室"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="下单时间"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="121dp"
+                    android:textColor="@color/black_333333"
+                    android:textSize="12sp"
+                    android:text="2020-05-13 21:22:16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="期望送达时间"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="121dp"
+                    android:textColor="@color/black_333333"
+                    android:textSize="12sp"
+                    android:text="2020-05-13 22:52:16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_23c1c7_3dp"
+                android:textColor="@color/white_ffffff"
+                android:textSize="16sp"
+                android:text="立即抢单"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+
+            <Button
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_23c1c7_3dp_bord"
+                android:textColor="@color/theme"
+                android:textSize="16sp"
+                android:text="取消抢单"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

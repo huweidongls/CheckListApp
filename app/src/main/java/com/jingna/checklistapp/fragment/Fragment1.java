@@ -1,5 +1,6 @@
 package com.jingna.checklistapp.fragment;
 
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2020/6/9.
@@ -44,8 +46,8 @@ public class Fragment1 extends LazyFragment {
     }
 
     @Override
-    protected void onFragmentVisible() {
-        super.onFragmentVisible();
+    protected void onFragmentFirstVisible() {
+        super.onFragmentFirstVisible();
         initData();
     }
 
@@ -55,6 +57,36 @@ public class Fragment1 extends LazyFragment {
         viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(mainAdapter);
         viewPager.addOnPageChangeListener(mainAdapter);
+
+    }
+
+    @OnClick({R.id.ll1, R.id.ll2})
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.ll1:
+                select(0);
+                break;
+            case R.id.ll2:
+                select(1);
+                break;
+        }
+    }
+
+    private void select(int i) {
+
+        if(i == 0){
+            tv1.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            tv2.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+            view1.setVisibility(View.VISIBLE);
+            view2.setVisibility(View.INVISIBLE);
+            viewPager.setCurrentItem(0);
+        }else if(i == 1){
+            tv1.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+            tv2.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            view1.setVisibility(View.INVISIBLE);
+            view2.setVisibility(View.VISIBLE);
+            viewPager.setCurrentItem(1);
+        }
 
     }
 
@@ -88,9 +120,13 @@ public class Fragment1 extends LazyFragment {
         @Override
         public void onPageSelected(int position) {
             if(position == 0){
+                tv1.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                tv2.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
                 view1.setVisibility(View.VISIBLE);
                 view2.setVisibility(View.INVISIBLE);
             }else if(position == 1){
+                tv1.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+                tv2.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
                 view1.setVisibility(View.INVISIBLE);
                 view2.setVisibility(View.VISIBLE);
             }
